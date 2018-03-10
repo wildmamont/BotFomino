@@ -1,0 +1,2 @@
+0 12 * * * /home/telegramd/noonphoto.sh
+*/10 * * * * /home/pi/camera/camera.sh
