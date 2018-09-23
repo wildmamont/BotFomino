@@ -1,0 +1,22 @@
+[Unit]
+Description=UmtsKeeper - 3g Internet Connection
+
+Wants=network.target
+After=network.target
+#Requires=usb_modeswitch@.service
+
+#ConditionPathExists=/dev/ttyUSB0
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+ExecStart=/opt/umtskeeper/umtskeeper --nat ppp0 --conf /opt/umtskeeper/umtskeeper.conf
+
+
+KillSignal=SIGKILL
+KillMode=process
+
+Restart=on-failure
+

@@ -1,0 +1,2 @@
+deb https://packagecloud.io/grafana/stable/debian/ stretch main
+# curl https://packagecloud.io/gpg.key | sudo apt-key add -

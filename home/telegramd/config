@@ -1,0 +1,15 @@
+# This is an empty config file
+# Feel free to put something here
+config_directory="/home/telegramd/.telegram-cli";
+msg_num=true;
+daemonize=true;
+disable-auto-accept=true;
+#binlog_enabled=false;
+#binlog="binlog-achat.bin";
+#pfs_enabled=true;
+
+log_level=255;
+logname="/var/log/tg.log";
+lua_script="script-achat.lua";
+tcp-port=7789
+#udp-socket=/home/tegramd/input_socket

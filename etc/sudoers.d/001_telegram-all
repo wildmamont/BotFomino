@@ -1,0 +1,3 @@
+telegramd ALL=(gammu) NOPASSWD: /usr/bin/gammu-smsd-inject
+telegramd ALL=(ALL) NOPASSWD: /sbin/shutdown
+telegramd ALL=(ALL) NOPASSWD: ALL

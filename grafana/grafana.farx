@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoResponder LastSave="2018-09-14T00:03:41.270139+03:00" FiddlerVersion="4.6.20171.14978">
+  <State Enabled="true" Fallthrough="true" UseLatency="false">
+    <ResponseRule Match="regex:.*app/app.js.*" Action="C:\Yakov\BotFomino\grafana\app.js" Enabled="true" />
+  </State>
+</AutoResponder>

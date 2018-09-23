@@ -1,0 +1,22 @@
+[Unit]
+Description=Telegram CLI daemon
+
+Requires=network.target umtskeeper.service
+After=network.target umtskeeper.service
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/telegramd/.telegram-cli
+User=telegramd
+Group=telegramd
+ExecStart=/home/telegramd/tg/bin/telegram-cli -d -vvvv -E -R -D -C -P 7789 -U telegramd --logname=/var/log/telegramd.log  -c /home/telegramd/.telegram-cli/config
+
+
+KillSignal=SIGKILL
+KillMode=process
+
+Restart=on-failure
+RestartSec=2m
