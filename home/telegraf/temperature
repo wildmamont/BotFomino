@@ -1,0 +1,5 @@
+#!/bin/bash
+temperature="`head /home/telegraf/temperature12 2>>~/temp_err.txt`"
+#cat /home/telegraf/temperature12 > ~/temp.txt 2>~/temp_err.txt
+echo $temperature
+#echo 18

@@ -1,0 +1,5 @@
+#!/bin/bash
+Pressure="`/home/telegraf/bme280_text.py |awk '{ if ($1 == "Pressure") { print substr($3,1,6) } }' 2>>~/temp_err.txt`"
+#cat /home/telegraf/temperature12 > ~/temp.txt 2>~/temp_err.txt
+echo $Pressure
+#echo 18

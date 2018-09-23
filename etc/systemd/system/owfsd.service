@@ -1,0 +1,19 @@
+[Unit]
+Description=OwFS service
+
+Requires=network.target umtskeeper.service
+After=network.target umtskeeper.service
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/owfs/owfs -c /etc/owfs.conf
+
+
+KillSignal=SIGKILL
+KillMode=process
+
+Restart=on-failure
+RestartSec=2m

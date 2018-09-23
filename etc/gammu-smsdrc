@@ -1,0 +1,26 @@
+# Configuration file for Gammu SMS Daemon
+
+# Gammu library configuration, see gammurc(5)
+[gammu]
+# Please configure this!
+port = /dev/ttyUSB1
+connection = at
+gammucoding = utf8
+# Debugging
+#logformat = textall
+
+# SMSD configuration, see gammu-smsdrc(5)
+[smsd]
+PIN = 0000
+service = files
+logfile = /var/log/gammu
+# Increase for debugging information
+debuglevel = 1
+
+# Paths where messages are stored
+inboxpath = /var/spool/gammu/inbox/
+outboxpath = /var/spool/gammu/outbox/
+sentsmspath = /var/spool/gammu/sent/
+errorsmspath = /var/spool/gammu/error/
+
+RunOnReceive = /opt/modem/RunOnReceive.sh

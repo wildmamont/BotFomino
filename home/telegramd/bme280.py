@@ -18,7 +18,6 @@
 # http://www.raspberrypi-spy.co.uk/
 #
 #--------------------------------------
-import json
 import smbus
 import time
 from ctypes import c_short
@@ -154,18 +153,19 @@ def readBME280All(addr=DEVICE):
   elif humidity < 0:
     humidity = 0
 
-  return temperature/100.0,pressure/100.0*0.750063755419211,humidity
+  return temperature/100.0,pressure*0.00750061561303,humidity
 
 def main():
 
   (chip_id, chip_version) = readBME280ID()
+  print "Chip ID     :", chip_id
+  print "Version     :", chip_version
+
   temperature,pressure,humidity = readBME280All()
-#  print "Chip ID     :", chip_id
-#  print "Version     :", chip_version
-#  print "Temperature : ", temperature, "C"
-#  print "Pressure : ", pressure, "mmHg"
-#  print "Humidity : ", humidity, "%"
-  print "{\"Chip_ID\":",chip_id,",\"Version\":",chip_version,  ",\"Temperature\":",temperature,     ",\"Pressure\":",pressure,     ",\"Humidity\":",humidity,   "}"
+
+  print "Temperature : ", temperature, "C"
+  print "Pressure : ", pressure, "mmHg"
+  print "Humidity : ", humidity, "%"
 
 if __name__=="__main__":
    main()

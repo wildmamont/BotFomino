@@ -1,0 +1,12 @@
+#interface=eth0
+domain=eth0.fomino3.ru,192.168.67.0/24
+domain=wlan0.fomino3.ru,192.168.66.0/24
+
+dhcp-range=192.168.67.50,192.168.67.100,255.255.255.0,48h
+dhcp-range=192.168.66.50,192.168.66.100,255.255.255.0,48h
+
+dhcp-host=54:42:49:ED:4F:82,yborisov,192.168.67.28,infinite
+dhcp-host=78:DD:08:BF:AB:B1,yborisovW,192.168.66.28,infinite
+#dhcp-host=48:02:2a:04:7e:20,vstarcam,192.168.67.133,infinite
+dhcp-host=48:02:2a:04:7e:20,vstarcamW,192.168.66.133,infinite
+dhcp-host=38:01:95:64:1a:72,tv40,192.168.67.40,infinite

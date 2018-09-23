@@ -8,11 +8,12 @@ After=network.target umtskeeper.service
 WantedBy=default.target
 
 [Service]
+Environment=SOCKS5_SERVER="telegram.vpn99.net:55655"
 Type=simple
 WorkingDirectory=/home/telegramd/.telegram-cli
 User=telegramd
 Group=telegramd
-ExecStart=/home/telegramd/tg/bin/telegram-cli -d -vvvv -E -R -D -C -P 7789 -U telegramd --logname=/var/log/telegramd.log  -c /home/telegramd/.telegram-cli/config
+ExecStart=socksify /home/telegramd/tg/bin/telegram-cli -d -vvvv -E -R -D -C -P 7789 -U telegramd --logname=/var/log/telegramd.log  -c /home/telegramd/.telegram-cli/config
 
 
 KillSignal=SIGKILL
